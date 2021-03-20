@@ -399,7 +399,7 @@ footer p {
   }
 
   .banner img, .banner figure {
-    height: 25rem;
+    width: 15rem;
   }
 }
 
