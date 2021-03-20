@@ -1,0 +1,475 @@
+/*
+:root {
+  --red: #3f0000;
+  --shadow: 0 1px 5px rgba(104, 104, 104, 0.8);
+  --bg: rgba(255, 253, 208, 0.5);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  box-sizing: border-box;
+}
+
+p, li, figcaption {
+  font-family: 'Cormorant Infant', serif;
+  font-size: 1.2rem;
+}
+
+h1, h2, h3, h4 {
+  font-family: 'IM Fell DW Pica', serif;
+}
+
+figure {
+  position: relative;
+}
+
+figure img {
+  box-shadow: var(--shadow);
+  width: 100%;             /*make image full width of container
+}
+
+figure figcaption {
+  background: var(--bg);
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  padding: 10px;
+  text-align: center;
+  z-index: 1;
+}
+
+.wrapper {
+  margin: 1rem auto;
+  display: grid;
+}
+
+/* Header
+
+header {
+  margin: 1rem auto;
+  display: grid;
+  grid-template-columns: 1fr;
+}
+
+header .title-logo {
+  font-size: 2rem;
+  text-align: center;
+}
+
+header .title-logo img {
+  height: 20rem;
+  margin-bottom: 3rem;
+}
+
+header ul {
+  font-weight: bold;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  text-align: center;
+  list-style: none;
+  margin: 3rem;
+}
+
+header ul li {
+  font-size: 2rem;
+  padding: 3rem;
+}
+
+header ul li:hover {
+  color: darkslateblue;
+}
+
+/* Banner Section
+
+.banner {
+  display: grid;
+  grid-gap: 20px;
+  grid-template-columns: 1fr 2fr;
+  line-height: 1.7;
+  margin: 4rem 10rem;
+}
+
+.banner img {
+  position: relative;
+}
+
+.banner figure {
+  height: 20rem;
+}
+
+/* Gallery Section
+
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit,minmax(200px, 1fr));
+  justify-content: center;
+  align-items: center;
+  margin: 4rem 10rem;
+}
+
+.gallery figure {
+  margin: 1rem;
+} */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.wrapper {
+  display: grid;
+  grid-template-columns: 1fr 2fr 4fr 1fr;
+  grid-template-rows: 15em auto auto 20em auto 15em;
+  grid-template-areas:
+    "header header header header"
+    ". banner banner ."
+    "gallery gallery gallery gallery"
+    "news news news news"
+    "membership membership membership membership"
+    "footer footer footer footer";
+}
+
+img {
+  height: 20rem;
+}
+
+h1, h2, h3 {
+  font-family: 'IM Fell DW Pica', serif;
+}
+
+ul li, p, figcaption, button {
+  font-family: 'Cormorant Infant', serif;
+  font-size: 1.5rem;
+}
+
+.banner img, .gallery img {
+  box-shadow: 0 1px 5px rgba(104, 104, 104, 0.8);
+}
+
+.club-news h3, .banner h2 {
+  padding: 5px 5px 5px 0;
+}
+
+ul {
+  list-style: none;
+}
+
+.membership h3, .player h3, .gallery-titles h3 {
+  font-size: 1.6rem;
+}
+
+.gallery-titles h2, .banner h2 {
+  font-size: 1.9rem;
+}
+
+.player a {
+  text-decoration; none;
+}
+
+
+/* HEADER */
+
+header {
+  grid-area: header;
+  background: rgba(255, 253, 208, 0.5);
+  border-bottom: solid 2px #3f0000;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.title-logo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 1rem;
+}
+
+header img {
+  height: 8rem;
+  padding: 1rem;
+}
+
+header ul {
+  display: flex;
+  margin: 1rem auto;
+  justify-content: center;
+}
+
+header ul li {
+  margin: 1.5rem;
+  text-align: center;
+}
+
+header ul li:hover {
+  text-decoration: underline;
+  color: darkslategray;
+  cursor: pointer;
+}
+
+/* Banner */
+
+.banner {
+  grid-area: banner;
+  display: flex;
+  border-bottom: 1px solid #3f0000;
+  padding: 4rem 0;
+  justify-content: center;  /*allows image and about info to align TOGETHER as window shrinks*/
+  align-items: center;
+}
+
+.banner .about {
+  margin-left: 2rem;
+  min-width: 250px;
+}
+
+.banner figure {
+  box-shadow: 0 1px 5px rgba(104, 104, 104, 0.8);
+  height: 26rem;
+}
+
+.banner img {
+  box-shadow: 0 1px 5px rgba(104, 104, 104, 0.8);
+  width: 100%;
+  height: 26rem;
+  min-width: 250px;
+}
+
+.banner p {
+  font-size: 1.3rem;
+  line-height: 1.9rem;
+}
+
+.banner h2 {
+  font-size: 1.7rem;
+}
+
+/* Gallery section */
+
+.gallery {
+  grid-area: gallery;
+  text-align: center;
+}
+
+.gallery-titles {
+  margin: 3rem;
+}
+
+.img-gallery {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 4rem;
+  justify-content: center;
+  align-items; center;
+}
+
+.gallery figure {
+  height: 16rem;   /*remember, if you change the height of the figure you need to change the height of the image, so they fit*/
+  min-width: 230px;
+  margin: 1rem 5rem 1rem 5rem;   /*the 1rem for top and bottom is good, becasue when the images wrap, they will always have a 1rem gap between them...*/
+  position: relative;
+  text-align: center;
+}
+
+.gallery figure img {
+  height: 16rem;
+  min-width: 230px;
+  max-width: 100%;    /*stays full-width of its parent container*/
+  overflow: hidden;
+}
+
+.gallery figure figcaption {
+  position: absolute;
+  background: rgba(255, 253, 208, 0.5);
+  margin-bottom: 0;
+  width: 100%;
+  padding: 5px;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  z-index: 1;
+}
+
+/* Club News section */
+
+.club-news {
+  grid-area: news;
+  overflow-y: scroll;
+  background: rgba(255, 253, 208, 0.3);
+
+}
+
+.club-news .news-block {
+  line-height: 1.9rem;
+  padding: 5rem;
+
+}
+
+.club-news h3 {
+  font-size: 1.8rem;
+  text-align: center;
+  border-top: 1px solid #3f0000;
+  padding-top: 10px;
+}
+
+/* Membership section */
+
+.membership-section {
+  grid-area: membership;
+  flex-direction: column;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.membership, .player {
+  border: 3px solid #3f0000;
+  border-radius: 30px;
+  margin: 4rem auto;
+  text-align: center;
+  padding: 30px;
+  line-height: 1.9rem;
+}
+
+.membership h3, .player h3 {
+  font-size: 1.8rem;
+}
+
+.player a img {
+  height: 3rem;
+  margin: 1rem;
+}
+
+/*Footer*/
+
+footer {
+  grid-area: footer;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: rgba(255, 253, 208, 0.8);
+}
+
+footer p {
+  padding-top: 5px;
+}
+
+@media(max-width: 885px) {
+  .wrapper {
+    grid-template-areas:
+      "header header header header"
+      "banner banner banner banner"
+      "gallery gallery gallery gallery"
+      "news news news news"
+      "membership membership membership membership"
+      "footer footer footer footer";
+  }
+
+  .banner {
+    padding: 2rem;
+  }
+}
+
+@media(max-width: 637px) {
+  header .title-logo h1 span {
+    display: none;
+  }
+
+  .banner {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .banner .about {
+    text-align: center;
+    margin: 0;
+  }
+
+  .banner img {
+    margin-bottom: 3rem;
+  }
+
+  .banner img, .banner figure {
+    height: 25rem;
+  }
+}
+
+@media(max-width: 590px) {
+  .membership, .player {
+    margin: 3rem 1rem;
+  }
+
+  .banner img {
+   display: none;
+  }
+
+  .wrapper {
+    grid-template-rows: 25em auto auto 20em auto 15em;
+  }
+
+  .gallery-titles h2, .banner h2 {
+    font-size: 1.3rem;
+  }
+
+  .membership h3, .player h3, .gallery-titles h3 {
+    font-size: 1.2rem;
+  }
+
+  ul li, p, figcaption, button {
+    font-family: 'Cormorant Infant', serif;
+    font-size: 1.1rem;
+  }
+
+  .club-news .news-block {
+    padding: 1rem;
+    text-align: center;
+  }
+
+  header ul {
+    flex-direction: column;
+  }
+
+  a.icon img {
+    height: 2rem;
+  }
+}
+
+@media(max-width: 345px) {
+  .wrapper {
+    grid-template-rows: 29rem auto auto 20em auto 15em;
+  }
+
+  .club-news h3 {
+    font-size: 1.5rem;
+  }
+
+  .news-block h3 span {
+    display: none;
+  }
+
+  header .title-logo {
+    flex-direction: column;
+    margin-top: 2rem;
+    font-size: 1rem;
+    text-align: center;
+  }
+
+  .banner .about p {
+    font-size: 1rem;
+    padding: 10px;
+  }
+
+  footer p {
+      font-size: 0.7rem;
+      font-weight: bold;
+  }
+}
